@@ -20,11 +20,14 @@ public class HipsterFrame extends JFrame
 	public String getResponse(String prompt)
 	{
 		String response = JOptionPane.showInputDialog(this, prompt);
+		return response;
 	}
 	
 	private void setupFrame()
 	{
-		
+		this.setContentPane(basePanel);
+		this.setSize(400,400);
+		this.setVisible(true);
 	}
 	
 }

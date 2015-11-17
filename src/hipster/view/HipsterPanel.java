@@ -18,11 +18,13 @@ public class HipsterPanel extends JPanel
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
+		phraseComboBox = new JComboBox<String>();
 
+		setupComboBox();
 		setupPanel();
 		setupLayout();
 		setupListeners();
-
+		
 	}
 
 	private void setupComboBox()
@@ -35,13 +37,14 @@ public class HipsterPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setBackground(Color.CYAN);
+		this.setBackground(Color.PINK);
 		this.add(phraseComboBox);
 	}
 
 	private void setupLayout()
 	{
-
+		baseLayout.putConstraint(SpringLayout.NORTH, phraseComboBox, 48, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, phraseComboBox, 189, SpringLayout.WEST, this);
 	}
 
 	private void setupListeners()
